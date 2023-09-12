@@ -19,7 +19,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "./.eslintcr.json"
+      "../.eslintcr.json"
     ]
   },
   "browserslist": {
