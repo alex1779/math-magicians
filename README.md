@@ -25,7 +25,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Math Magicians: setup. <a name="about-project"></a>
+# 📖 Math Magicians: components. <a name="about-project"></a>
 
 > In this activity I will set up the environment and tools needed to develop a React application.
 
