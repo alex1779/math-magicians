@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function Calculator() {
   return (
 
@@ -29,13 +31,29 @@ function Calculator() {
 
         <button className="buttons-group3" type="button">0</button>
         <button className="buttons-group1" type="button">.</button>
-        <button className="buttons-group2" type="button">=</button>
-
+        <ButtonEqual string="=" />
       </div>
 
     </div>
 
   );
 }
+
+function ButtonEqual(props) {
+  const { string } = props;
+  return (
+    <button className="buttons-group2" type="button">
+      {string}
+    </button>
+  );
+}
+
+ButtonEqual.defaultProps = {
+  string: 0,
+};
+
+ButtonEqual.propTypes = {
+  string: PropTypes.string,
+};
 
 export default Calculator;
