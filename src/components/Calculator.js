@@ -1,59 +1,71 @@
-import PropTypes from 'prop-types';
+import { useState } from 'react';
+import calculate from '../logic/calculate';
+import { ButtonGray, ButtonOrange, ButtonZero } from './buttons';
 
 function Calculator() {
+  const [calculator, setCalculator] = useState(
+    {
+      total: null,
+      next: null,
+      operation: null,
+    },
+  );
+
+  const [displayNumber, setDisplayNumber] = useState('0');
+
+  const byPassNext = (calculator) => {
+    if (calculator.next) {
+      return setDisplayNumber(calculator.next);
+    }
+    if (calculator.total) {
+      return setDisplayNumber(calculator.total);
+    }
+    return setDisplayNumber('0');
+  };
+
+  const clickCalc = (value) => {
+    const newCalculator = calculate(calculator, value);
+    setCalculator(newCalculator);
+    byPassNext(newCalculator);
+  };
+
   return (
 
     <div className="default">
 
-      <input type="text" placeholder="0" className="input-result" />
+      <input type="text" placeholder="0" className="input-result" value={displayNumber} />
 
       <div className="buttons">
 
-        <button className="buttons-group1" type="button">AC</button>
-        <button className="buttons-group1" type="button">+/-</button>
-        <button className="buttons-group1" type="button">%</button>
-        <button className="buttons-group2" type="button">÷</button>
+        <ButtonGray string="AC" clickCalc={clickCalc} />
+        <ButtonGray string="+/-" clickCalc={clickCalc} />
+        <ButtonGray string="%" clickCalc={clickCalc} />
+        <ButtonOrange string="÷" clickCalc={clickCalc} />
 
-        <button className="buttons-group1" type="button">7</button>
-        <button className="buttons-group1" type="button">8</button>
-        <button className="buttons-group1" type="button">9</button>
-        <button className="buttons-group2" type="button">x</button>
+        <ButtonGray string="7" clickCalc={clickCalc} />
+        <ButtonGray string="8" clickCalc={clickCalc} />
+        <ButtonGray string="9" clickCalc={clickCalc} />
+        <ButtonOrange string="x" clickCalc={clickCalc} />
 
-        <button className="buttons-group1" type="button">4</button>
-        <button className="buttons-group1" type="button">5</button>
-        <button className="buttons-group1" type="button">6</button>
-        <button className="buttons-group2" type="button">-</button>
+        <ButtonGray string="4" clickCalc={clickCalc} />
+        <ButtonGray string="5" clickCalc={clickCalc} />
+        <ButtonGray string="6" clickCalc={clickCalc} />
+        <ButtonOrange string="-" clickCalc={clickCalc} />
 
-        <button className="buttons-group1" type="button">1</button>
-        <button className="buttons-group1" type="button">2</button>
-        <button className="buttons-group1" type="button">3</button>
-        <button className="buttons-group2" type="button">+</button>
+        <ButtonGray string="1" clickCalc={clickCalc} />
+        <ButtonGray string="2" clickCalc={clickCalc} />
+        <ButtonGray string="3" clickCalc={clickCalc} />
+        <ButtonOrange string="+" clickCalc={clickCalc} />
 
-        <button className="buttons-group3" type="button">0</button>
-        <button className="buttons-group1" type="button">.</button>
-        <ButtonEqual string="=" />
+        <ButtonZero string="0" clickCalc={clickCalc} />
+        <ButtonGray string="." clickCalc={clickCalc} />
+        <ButtonOrange string="=" clickCalc={clickCalc} />
+
       </div>
 
     </div>
 
   );
 }
-
-function ButtonEqual(props) {
-  const { string } = props;
-  return (
-    <button className="buttons-group2" type="button">
-      {string}
-    </button>
-  );
-}
-
-ButtonEqual.defaultProps = {
-  string: 0,
-};
-
-ButtonEqual.propTypes = {
-  string: PropTypes.string,
-};
 
 export default Calculator;
