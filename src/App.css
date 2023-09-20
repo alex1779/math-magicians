@@ -1,3 +1,20 @@
+.mySection {
+  display: flex;
+}
+
+ul {
+  width: 50%;
+  list-style-type: none;
+}
+
+li:nth-child(even) {
+  background-color: lightgray;
+}
+
+li:nth-child(odd) {
+  background-color: lightblue;
+}
+
 .default {
   width: 400px;
   height: 400px;
