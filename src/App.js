@@ -1,14 +1,9 @@
 import './App.css';
-import Calculator from './components/Calculator';
-import Quotes from './components/Quotes';
+import RouterNav from './components/Router';
 
 function App() {
   return (
-    <section className="mySection">
-      <Calculator />
-      <Quotes />
-    </section>
-
+    <RouterNav />
   );
 }
 
