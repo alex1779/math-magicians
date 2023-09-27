@@ -16,6 +16,8 @@ ul {
   flex-direction: row;
   list-style: none;
   gap: 20px;
+  width: 25%;
+  font-size: 1.2rem;
 }
 
 li a {
@@ -23,12 +25,12 @@ li a {
 }
 
 .navLink {
-  color: black;
+  color: blue;
   transition: all 250ms ease-in-out;
 }
 
 .navLink:hover {
-  color: blue;
+  color: darkmagenta;
 }
 
 .active {
@@ -37,6 +39,6 @@ li a {
 }
 
 h1 {
-  font-size: 42px;
+  font-size: 50px;
   font-weight: 700;
 }
