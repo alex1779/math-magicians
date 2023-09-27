@@ -1,0 +1,44 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  height: 80px;
+  box-sizing: border-box;
+  padding: 0 30px;
+  margin-bottom: 30px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 20px;
+  width: 25%;
+  font-size: 1.2rem;
+}
+
+li a {
+  text-decoration: none;
+}
+
+.navLink {
+  color: blue;
+  transition: all 250ms ease-in-out;
+}
+
+.navLink:hover {
+  color: darkmagenta;
+}
+
+.active {
+  color: rgb(80, 80, 80);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+}

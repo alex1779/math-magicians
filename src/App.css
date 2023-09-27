@@ -11,14 +11,20 @@ li:nth-child(even) {
   background-color: lightgray;
 }
 
-li:nth-child(odd) {
-  background-color: lightblue;
+.intro {
+  display: flex;
+}
+
+.intro-p {
+  color: black;
+  font-size: 2rem;
 }
 
 .default {
-  width: 400px;
+  width: 740px;
   height: 400px;
   background-color: rgb(209, 209, 209);
+  margin-left: 130px;
 }
 
 .input-result {
@@ -55,4 +61,14 @@ li:nth-child(odd) {
   text-align: center;
   font-size: 1.5vw;
   padding: 1.5vw 0 1.5vw 0;
+}
+
+.quotes {
+  width: 90%;
+  font-size: 2vw;
+  color: black;
+  padding-top: 10vw;
+  text-align: center;
+  align-items: center;
+  display: grid;
 }

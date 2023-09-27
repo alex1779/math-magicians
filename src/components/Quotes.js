@@ -5,7 +5,7 @@ function Quotes() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('https://api.api-ninjas.com/v1/quotes?limit=10&category=money', {
+      const res = await fetch('https://api.api-ninjas.com/v1/quotes?limit=1&category=money', {
         headers: {
           'X-Api-Key': '417MZ7DAIIDohifAq1HR0g==C8ex0UAh8uWfaqqG',
         },
@@ -17,23 +17,15 @@ function Quotes() {
   }, [setData]);
 
   return (
-    <ul>
-      {data.map((item) => (
-        <li key={item.id}>
-          <strong>Author:</strong>
-          {' '}
-          {item.author}
-          {' '}
-          <strong>Category:</strong>
-          {' '}
-          {item.category}
-          {' '}
-          <strong>Quote:</strong>
-          {' '}
-          {item.quote}
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className="quotes">
+        {data.map((item) => (
+          <li key={item.id}>
+            {`${item.quote} -${item.author}`}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
