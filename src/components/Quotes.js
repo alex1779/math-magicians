@@ -1,12 +1,30 @@
+import { useState, useEffect } from 'react';
+
 function Quotes() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('https://api.api-ninjas.com/v1/quotes?limit=1&category=money', {
+        headers: {
+          'X-Api-Key': '417MZ7DAIIDohifAq1HR0g==C8ex0UAh8uWfaqqG',
+        },
+      });
+      const json = await res.json();
+      setData(json);
+    };
+    fetchData();
+  }, [setData]);
+
   return (
     <>
-      <p style={{
-        fontSize: 20, color: 'black', paddingTop: '10vw', paddingLeft: '10vw',
-      }}
-      >
-        Pure mathematics is, in its way, the poetry of logical ideas.— Albert Einstein.
-      </p>
+      <ul className="quotes">
+        {data.map((item) => (
+          <li key={item.id}>
+            {`${item.quote} -${item.author}`}
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
