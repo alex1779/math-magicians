@@ -1,9 +1,9 @@
-import operate from '../logic/operate.js';
+import operate from '../logic/operate';
 
 const numberOne = 2;
 const numberTwo = 4;
 const operation = 'x';
 
 test('return the result of multiplication of two numbers', () => {
-    expect(operate(numberOne, numberTwo, operation)).toEqual('8')
-})
+  expect(operate(numberOne, numberTwo, operation)).toEqual('8');
+});
