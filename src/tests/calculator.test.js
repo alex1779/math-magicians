@@ -5,6 +5,7 @@ import Calculator from '../components/Calculator';
 test('Confirm that the page renders correctly', () => {
   const component = renderer.create(<Calculator />);
   const tree = component.toJSON();
-
+  console.log('erase this');
   expect(tree).toMatchSnapshot();
 });
+
