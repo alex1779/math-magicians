@@ -6,7 +6,7 @@ exports[`Confirm that Quotes renders correctly 1`] = `
     class="quotes"
   >
     <li>
-      I can make more generals, but horses cost money. -Abraham Lincoln
+      Money is the root of all evil. -Mark Twain
     </li>
   </ul>
 </div>
