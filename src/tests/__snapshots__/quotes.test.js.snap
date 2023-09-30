@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirm that Quotes renders correctly 1`] = `
+<div>
+  <ul
+    class="quotes"
+  >
+    <li>
+      Money is the root of all evil. -Mark Twain
+    </li>
+  </ul>
+</div>
+`;
